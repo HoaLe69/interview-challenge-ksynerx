@@ -1,6 +1,5 @@
 # Change Data Management Service Prototype
 
-A service that stores **only new or changed** product data coming from three sources, with effectively-once
 semantics under failures and spike load.
 
 ## Problem statement
@@ -20,6 +19,7 @@ FastAPI, PostgreSQL, Docker Compose, Python 3.12
 
 ## Project structure
 
+```
 interview-challenge-ksynerx/
 ├── docker-compose.yml
 ├── .env.example
@@ -33,3 +33,4 @@ interview-challenge-ksynerx/
 ├── tools/                    # faker client, chaos script, load test
 ├── tests/
 └── docs/
+```
