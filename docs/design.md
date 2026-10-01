@@ -20,7 +20,6 @@ Sẽ có 3 cách get và parse data khác sau. Sau đó tất cả gọi chung `
 
 - Luồng cơ bản xác định new products dựa trên mã hash
 
-```
 ```mermaid
 flowchart TD
     A[Sản phẩm đến] --> B{"SKU đã có?"}
