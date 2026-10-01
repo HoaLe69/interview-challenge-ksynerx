@@ -9,7 +9,7 @@ from app.db import init_db, check_db
 from typing import Union, List
 from pydantic import ValidationError
 
-from app.cdc import upsert_products
+from app.core import upsert_products
 from app.schemas import Product
 
 from app.utils import get_key, parse_row, COLUMNS

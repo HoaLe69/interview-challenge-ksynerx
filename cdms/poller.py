@@ -8,7 +8,7 @@ from uuid import uuid4
 from apscheduler.schedulers.background import BackgroundScheduler
 from pydantic import ValidationError
 
-from app.cdc import upsert_products
+from app.core import upsert_products
 from app.config import POLL_INTERVAL_SECONDS, VIETFUL_URL
 from app.schemas import Product
 
