@@ -17,7 +17,6 @@ scheduler = BackgroundScheduler()
 
 
 def poll_once(): 
-    print("Run schedule Job")
     try:
         with urllib.request.urlopen(VIETFUL_URL, timeout=10) as resp:
             raw = json.load(resp)
