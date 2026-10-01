@@ -23,6 +23,9 @@ FastAPI, SQLAlchemy, PostgreSQL, APScheduler, pandas, Docker Compose.
 ## Quick start
 
 ```
+git clone git@github.com:HoaLe69/interview-challenge-ksynerx.git
+cd interview-challenge-ksynerx
+
 cp .env.example .env
 docker compose up --build
 curl localhost:8000/health
