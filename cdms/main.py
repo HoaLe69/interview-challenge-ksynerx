@@ -10,13 +10,17 @@ from app.schemas import Product
 from app.utils import get_key, parse_row, COLUMNS
 import pandas as pd
 
+from app.poller import start_scheduler, stop_scheduler
+
 
 import io
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
+    start_scheduler()
     yield
+    stop_scheduler()
 
 app = FastAPI(lifespan=lifespan)
 
