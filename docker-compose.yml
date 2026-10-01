@@ -24,6 +24,14 @@ services:
     depends_on:
       db:
         condition: service_healthy
+      vietful-mock:
+        condition: service_started
+    restart: unless-stopped
+
+  vietful-mock:
+    build: ./vietful_mock/
+    ports:
+      - "8081:8000"
     restart: unless-stopped
 
 volumes:
