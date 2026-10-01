@@ -1,4 +1,9 @@
 from fastapi import FastAPI, Response, File, HTTPException, UploadFile, status
+from fastapi.encoders import jsonable_encoder
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
+from sqlalchemy.exc import OperationalError
+
 from contextlib import asynccontextmanager
 from app.db import init_db, check_db
 from typing import Union, List
@@ -88,3 +93,14 @@ def upload_excel(file: UploadFile = File(...)):
         "errors" : errors + result["errors"]
     }
 
+@app.exception_handler(RequestValidationError)
+async def validation_400(request, exc):
+    return JSONResponse(status_code=400, content={"detail": jsonable_encoder(exc.errors())})
+
+@app.exception_handler(OperationalError)
+async def db_down(request, exc):
+    return JSONResponse(
+        status_code=503, 
+        content={"detail": "database unavailable"},
+        headers={"Retry-After": "5"}
+    )
