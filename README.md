@@ -39,8 +39,8 @@ Mở trang `http://localhost:8000/docs` để thực hiện test api.
 | File | Content |
 | --- | --- |
 | [docs/design.md](docs/design.md) | Kiến trúc, schema, hash + UPSERT, API, cách xử lý lỗi |
-| [docs/testing.md](docs/testing.md) | Cách test và kết quả spike/chaos test |
-| [docs/report.md](docs/report.md) | Quan điểm của em về challenge này |
+| [docs/testing.md](docs/testing.md) | Testing docs |
+| [docs/report.md](docs/report.md) | Report về challenge này |
 
 ## Project structure
 
